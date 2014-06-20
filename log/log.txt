@@ -1,0 +1,281 @@
+[ 14:24:49 20/6/14 ] DBG: url отправной точки: http://bankrot.fedresurs.ru/TradeList.aspx
+[ 14:24:49 20/6/14 ] DBG: вид торгов - 'Публичое предложение' (значение поля '3'): 1
+[ 14:24:49 20/6/14 ] DBG: таймаут повторного запроса для форм, с: 3
+[ 14:24:49 20/6/14 ] DBG: таймаут перехода по ссылкам, с: 3
+[ 14:24:49 20/6/14 ] DBG: файл базы данных: ./db/lots.sqlite3
+[ 14:24:49 20/6/14 ] DBG: координаты: [55.834218, 37.623497]
+[ 14:24:49 20/6/14 ] DBG: максимальное удаление объекта, км: 300
+[ 14:24:49 20/6/14 ] DBG: лог-файл: ./log/log.txt
+[ 14:24:49 20/6/14 ] DBG: направление(ия) выхлопа логов ( :both | :file | :stdout ): both
+[ 14:24:49 20/6/14 ] DBG: лог dbg-сообщений? (= да! - и это очевидно =): true
+[ 14:24:49 20/6/14 ] DBG: process_fedresurs > init
+[ 14:25:00 20/6/14 ] DBG: process_fedresurs > process!
+[ 14:25:00 20/6/14 ] INFO: [fedresurs] Ok, Let's go
+[ 14:25:00 20/6/14 ] DBG: process_fedresurs > loop_by_regions
+[ 14:25:00 20/6/14 ] DBG: process_fedresurs > loop_by_regions > each
+[ 14:25:00 20/6/14 ] INFO: регион: 45 | Москва
+[ 14:25:00 20/6/14 ] DBG: shared > wait_timeout, timeout: 3
+[ 14:25:03 20/6/14 ] DBG: process_fedresurs > vizit_fedresurs
+[ 14:25:07 20/6/14 ] DBG: process_fedresurs > fill_form
+[ 14:25:12 20/6/14 ] DBG: shared > wait_timeout, timeout: 3
+[ 14:25:20 20/6/14 ] DBG: shared > wait_when_dom_changed
+[ 14:25:20 20/6/14 ] DBG: process_fedresurs > process_paggination
+[ 14:25:21 20/6/14 ] DBG: process_fedresurs > check_page
+[ 14:25:21 20/6/14 ] SUCCESS: [fedresurs] Обнаружен список торгов
+[ 14:25:21 20/6/14 ] DBG: process_fedresurs > process_paggination > if
+[ 14:25:21 20/6/14 ] DBG: process_fedresurs > look_over_table
+[ 14:25:21 20/6/14 ] DBG: process_fedresurs > look_over_table > each by tr
+[ 14:25:21 20/6/14 ] DBG: process_fedresurs > look_over_table > each by tr - grab platform_id from link href
+[ 14:25:21 20/6/14 ] DBG: process_fedresurs > look_over_table > each by tr - gsub platform_id
+[ 14:25:21 20/6/14 ] DBG: process_fedresurs > look_over_table > each by tr - check if able?
+[ 14:25:21 20/6/14 ] DBG: platforms_list > able? No: 121
+[ 14:25:21 20/6/14 ] DBG: process_fedresurs > look_over_table > each by tr - check: is so far?
+[ 14:25:21 20/6/14 ] DBG: process_fedresurs > check_addres
+[ 14:25:21 20/6/14 ] DBG: process_fedresurs > check_addres > pull addr
+[ 14:25:21 20/6/14 ] DBG: process_fedresurs > have_card?
+[ 14:25:21 20/6/14 ] DBG: process_fedresurs > grab_addres_by_inn
+[ 14:25:21 20/6/14 ] DBG: process_fedresurs > grab_addres_by_inn > store wnd handler
+[ 14:25:21 20/6/14 ] DBG: shared > wait_timeout, timeout: 3
+[ 14:25:25 20/6/14 ] DBG: shared > wait_when_dom_changed
+[ 14:25:25 20/6/14 ] DBG: process_fedresurs > grab_addres_by_inn > open new window by link
+[ 14:25:27 20/6/14 ] DBG: process_fedresurs > grab_addres_by_inn > use new window
+[ 14:25:27 20/6/14 ] DBG: process_fedresurs > grab_addres_by_inn > @@brw.winidows.last.use
+[ 14:25:31 20/6/14 ] DBG: shared > wait_when_dom_changed
+[ 14:25:31 20/6/14 ] DBG: shared > wait_timeout, timeout: 3
+[ 14:25:34 20/6/14 ] DBG: process_fedresurs > grab_addres_by_inn > new window > click on 'сообщения'
+[ 14:25:37 20/6/14 ] DBG: shared > wait_when_dom_changed
+[ 14:25:37 20/6/14 ] DBG: shared > wait_timeout, timeout: 3
+[ 14:25:40 20/6/14 ] DBG: process_fedresurs > grab_addres_by_inn > new window > click and new window (inn page)
+[ 14:25:42 20/6/14 ] DBG: process_fedresurs > grab_addres_by_inn > new window > new new window use
+[ 14:25:42 20/6/14 ] DBG: process_fedresurs > grab_addres_by_inn > @@brw.winidows.last.use > @@brw.winidows.last.use
+[ 14:25:42 20/6/14 ] DBG: process_fedresurs > grab_addres_by_inn > @@brw.winidows.last.use > @@brw.winidows.last.use > grab inn
+[ 14:25:43 20/6/14 ] DBG: process_fedresurs > grab_addres_by_inn > @@brw.winidows.last.use > @@brw.winidows.last.use > check inn size
+[ 14:25:43 20/6/14 ] DBG: process_fedresurs > grab_addres_by_inn > @@brw.winidows.last.use - close
+[ 14:25:46 20/6/14 ] DBG: process_fedresurs > grab_addres_by_inn > @@brw.winidows.last.use > switch to previous wnd
+[ 14:25:46 20/6/14 ] DBG: shared > wait_timeout, timeout: 3
+[ 14:25:49 20/6/14 ] DBG: process_fedresurs > grab_addres_by_inn > @@brw.winidows.last.use > goto 'DebtorsSearch'
+[ 14:25:53 20/6/14 ] DBG: process_fedresurs > grab_addres_by_inn > @@brw.winidows.last.use > case inn by size
+[ 14:25:53 20/6/14 ] DBG: process_fedresurs > grab_addres_by_inn > @@brw.winidows.last.use > case inn by size: 12, set radio
+[ 14:25:58 20/6/14 ] DBG: process_fedresurs > grab_addres_by_inn > @@brw.winidows.last.use > case inn by size: 12, set text_field
+[ 14:25:58 20/6/14 ] DBG: shared > wait_timeout, timeout: 3
+[ 14:26:01 20/6/14 ] DBG: process_fedresurs > grab_addres_by_inn > @@brw.winidows.last.use > click to search
+[ 14:26:07 20/6/14 ] DBG: shared > wait_when_dom_changed
+[ 14:26:07 20/6/14 ] WARN: Должник не зарегистрирован - пропуск...
+[ 14:26:07 20/6/14 ] DBG: process_fedresurs > grab_addres_by_inn > @@brw.winidows.last.use > debtor not found, close wnd, return false
+[ 14:26:07 20/6/14 ] DBG: process_fedresurs > check_addres > return addr unless addr?
+[ 14:26:07 20/6/14 ] DBG: process_fedresurs > look_over_table > each by tr
+[ 14:26:07 20/6/14 ] DBG: process_fedresurs > look_over_table > each by tr - grab platform_id from link href
+[ 14:26:07 20/6/14 ] DBG: process_fedresurs > look_over_table > each by tr - gsub platform_id
+[ 14:26:07 20/6/14 ] DBG: process_fedresurs > look_over_table > each by tr - check if able?
+[ 14:26:07 20/6/14 ] DBG: platforms_list > able? No: 122
+[ 14:26:07 20/6/14 ] DBG: process_fedresurs > look_over_table > each by tr - check: is so far?
+[ 14:26:07 20/6/14 ] DBG: process_fedresurs > check_addres
+[ 14:26:07 20/6/14 ] DBG: process_fedresurs > check_addres > pull addr
+[ 14:26:07 20/6/14 ] DBG: process_fedresurs > have_card?
+[ 14:26:07 20/6/14 ] DBG: process_fedresurs > grab_addres_by_card
+[ 14:26:07 20/6/14 ] DBG: process_fedresurs > grab_addres_by_card > new wnd by click link
+[ 14:26:09 20/6/14 ] DBG: process_fedresurs > grab_addres_by_card > switch to new wnd
+[ 14:26:10 20/6/14 ] DBG: process_fedresurs > grab_addres_by_card > @@brw.windows.last.use do
+[ 14:26:14 20/6/14 ] DBG: shared > wait_when_dom_changed
+[ 14:26:14 20/6/14 ] DBG: process_fedresurs > grab_addres_by_card > @@brw.windows.last.use do > grab addr
+[ 14:26:14 20/6/14 ] DBG: process_fedresurs > grab_addres_by_card > @@brw.windows.last.use do - close
+[ 14:26:15 20/6/14 ] DBG: process_fedresurs > check_addres > return addr unless addr?
+[ 14:26:15 20/6/14 ] DBG: process_fedresurs > check_addres > Geo.near? Москва г, Обручева ул, 34/63, СТР.1
+[ 14:26:15 20/6/14 ] DBG: geocoder > near?
+[ 14:26:15 20/6/14 ] DBG: 	arrd: Москва г, Обручева ул, 34/63, СТР.1
+[ 14:26:18 20/6/14 ] DBG: 	so far
+[ 14:26:18 20/6/14 ] DBG: process_fedresurs > look_over_table > each by tr
+[ 14:26:18 20/6/14 ] DBG: process_fedresurs > look_over_table > each by tr - grab platform_id from link href
+[ 14:26:18 20/6/14 ] DBG: process_fedresurs > look_over_table > each by tr - gsub platform_id
+[ 14:26:18 20/6/14 ] DBG: process_fedresurs > look_over_table > each by tr - check if able?
+[ 14:26:18 20/6/14 ] DBG: platforms_list > able? No: 122
+[ 14:26:18 20/6/14 ] DBG: process_fedresurs > look_over_table > each by tr - check: is so far?
+[ 14:26:18 20/6/14 ] DBG: process_fedresurs > check_addres
+[ 14:26:18 20/6/14 ] DBG: process_fedresurs > check_addres > pull addr
+[ 14:26:18 20/6/14 ] DBG: process_fedresurs > have_card?
+[ 14:26:18 20/6/14 ] DBG: process_fedresurs > grab_addres_by_card
+[ 14:26:18 20/6/14 ] DBG: process_fedresurs > grab_addres_by_card > new wnd by click link
+[ 14:26:19 20/6/14 ] DBG: process_fedresurs > grab_addres_by_card > switch to new wnd
+[ 14:26:20 20/6/14 ] DBG: process_fedresurs > grab_addres_by_card > @@brw.windows.last.use do
+[ 14:26:25 20/6/14 ] DBG: shared > wait_when_dom_changed
+[ 14:26:25 20/6/14 ] DBG: process_fedresurs > grab_addres_by_card > @@brw.windows.last.use do > grab addr
+[ 14:26:25 20/6/14 ] DBG: process_fedresurs > grab_addres_by_card > @@brw.windows.last.use do - close
+[ 14:26:25 20/6/14 ] DBG: process_fedresurs > check_addres > return addr unless addr?
+[ 14:26:25 20/6/14 ] DBG: process_fedresurs > check_addres > Geo.near? Москва г, Ленинская Слобода ул, 19, -, 21
+[ 14:26:25 20/6/14 ] DBG: geocoder > near?
+[ 14:26:25 20/6/14 ] DBG: 	arrd: Москва г, Ленинская Слобода ул, 19, -, 21
+[ 14:26:26 20/6/14 ] DBG: process_fedresurs > look_over_table > each by tr - get params call
+[ 14:26:26 20/6/14 ] DBG: platforms_params > get_params_by_row
+[ 14:26:26 20/6/14 ] DBG: platforms_params > get_params_by_row (середина)
+	id: 122	strategy: type2
+[ 14:26:26 20/6/14 ] DBG: process_fedresurs > look_over_table > each by tr - params present
+[ 14:26:26 20/6/14 ] DBG: shared > wait_timeout, timeout: 3
+[ 14:26:29 20/6/14 ] DBG: process_fedresurs > look_over_table > each by tr - open new window for platform http://www.bankrupt.centerr.ru/public/public-offers-all/
+[ 14:26:30 20/6/14 ] DBG: process_fedresurs > look_over_table > each by tr - switch to new window
+[ 14:26:30 20/6/14 ] DBG: process_fedresurs > look_over_table > each by tr - new window > Platfor.process! call
+[ 14:26:30 20/6/14 ] DBG: platforms > process! на входе
+	параметры площадки: {:url=>"http://www.bankrupt.centerr.ru/public/public-offers-all/", :id=>122, :strategy=>:type2, :pp_num=>nil, :lot_num=>"1"}
+[ 14:26:30 20/6/14 ] SUCCESS: Обработка на площадке
+[ 14:26:30 20/6/14 ] DBG: type2 id: 122, pp_num: , lot_num: 1
+[ 14:26:44 20/6/14 ] DBG: shared > wait_when_dom_changed
+[ 14:26:44 20/6/14 ] DBG: shared > wait_timeout, timeout: 3
+[ 14:26:53 20/6/14 ] DBG: shared > wait_when_dom_changed
+[ 14:26:55 20/6/14 ] SUCCESS: Лот
+[ 14:26:56 20/6/14 ] SUCCESS: 	наименование: Лот № 1 - недвижимое имущество, движимое имущество
+[ 14:26:56 20/6/14 ] SUCCESS: 	сведения:     Ознакомление с составом лота, его характеристикой осуществляется по месту нахождения ООО ПСК «ДОРОГОБУЖ» с 09-00 до 17-00 час в рабочие дни приема заявок. В состав Лота № 1 входит: недвижимое имущество (Здание цеха извести, Литера А-А33, 7765,5 кв.м., Отделение приготовления мелового шлама, литера А34-А38, 1539,7 кв.м., Земельный участок для промышленной зоны, кадастровый номер 67:06:0030203:130, 6000 кв.м., Земельный участок для промышленной зоны, кадастровый номер 67:06:0030203:228, 23472 кв.м., Земельный участок для промышленной зоны, кадастровый номер 67:06:0030203:227, 52728 кв.м.,), движимое имущество (Chevrolet Niva, 2008 г.в., ГАЗ-322132, 2002 г.в., Автопогрузчик по 40912-01(КАРА), Агрегат АТФ-1000, Аппарат с перемешивающем устройством – 7 шт., Бункер – 2 шт., Ванна для насыщения образцов водой /раствором – 2шт., Вентилятор, Вентилятор ВКР-8,00, Вентилятор ВР 100-45-5 – 3 шт., Вентилятор ВЦ 4-70-8(5.5/1000), Вентилятор ЦП-7-40-5(45.0/1450), Весы вагонные РС-150У-13131, Весы вагонные РС-150Ц-13В, Вибропривод ВП 30 Т (с таймером), Воздухозборник V-16 куб.м., Воздухосборник, Глиноболтушка 2 – 2 шт., Глинорыхлитель СМК-496 (типа СМ 1031Б), Датчик Сапфир-22М-2310-01-У2(-30+50)-0,5-(+/-0,2кП – 2 шт., Дробилка молотковая, Дымосос ДН-22, Железнодорожный путь, Знак грунтовый (Репер) №4, Измельчитель мела, ККМ Элвес-микро К, Кольцо борцевое к печи обжига – 2 шт., Компенсатор линзовый – 2 шт., Комплект по "Energy For Win" АСКУЭ, Компьютер Pentium 4 – 3 шт., Конвейер винтовой – 2 шт., Конвейер винтовой L=12000, Конвейер ленточный – 2 шт., Конвейер пластинчатый – 4 шт., Конвейер ПТ-4312,ПТ-9994, Конвейер с погружными скребками – 2 шт., Конвейер УКЛС-650-У L=9 300vv, Контроллер №с -5000, Кран мостовой, Кран подвесной, Кран подвесной г/п 2т – 2 шт., Кран подвесной г/п=1т, Кран подвесной г/п=3,2т – 2 шт., Лаборатория службы воздуха, Мельница МЦ 2*10,5, МПО2м-10ф-2190-0.,37/0.63-у3(э/0.37кВт) мотор-реду – 4 шт., Нагрев воздуха VE22 EPA 11-22кВТ,380v, Насос 6ФШ-7А – 3 шт., Насос 8ШУ-6А – 3 шт., Насос БМ 190/45, Насос ГРАТ 85*40, Насос ТА-14Б, Насос ТА-16, Оборудование загрузочное к установке, Оборудование нестандартное, Оборудование силовое, Переключатель 2-х-ходовой ДП-200, Печь вращающаяся, Пирометр микропроцессорный С-210, Питатель шламовый, Питатель шлюзовый – 3 шт., Пневмонасос ТП-1 шт – 2 шт., Погрузчик Komatsa FD 30 T16 FV3,0 м дизель сер. №7, Подстанция комплектная трансформаторная, Преобразователь частоты 27 F5HOU 900А, Пункт ПР-24-3331, Пункт ПР-24-5231, Пункт распределительный СУ-9441, Расходомер счетчик эл. магнитный ПРОФИ-312 ДУ 50, Связь громкоговорящая ПГСМ-10, Сигнализатор довзрывных концентраций ПРИ, Сигнализация пожарная в АБК. система оповещения, Система контроля уровня в емкостях поз,48 И П, Смеситель шламовый – 2 шт., Станок токарный винторезный 560/2000 SNA-500, Стол диспетчерский ДДС-2, Стол-мойка двойная, Сумматор СЭМ 2.01, Текучестемер ИТ 10, Тигли высокие изд 100-7 – 4 шт., Трансформатор АТФ-600, Улавливатель газа с несложным устройством, Установка конденсаторная, Установка конденсаторная уклн-0,308-300-150У, Установка У-5052, Устройство комплектное распределительное, Устройство маневровое МУ-12М2А – 2 шт., Фильтр электрический, Циклоны ЦН-15 – 4 шт., Шкаф ШРА, Шкаф ЩСУ, Щит 2Щ – 2 шт., Щит 3Щ – 4 шт., товарно-материальные ценности – 172 наименования). Имущество, входящее в Лот № 1 расположено по адресу: 215753, Смоленская обл., Дорогобужский район, Верхнеднепровский ПГТ, промплощадка ОАО «Дорогобуж».
+[ 14:26:56 20/6/14 ] SUCCESS: 	url:          http://www.bankrupt.centerr.ru/public/public-offers/lots/view/224101/
+[ 14:27:00 20/6/14 ] SUCCESS: Интервал
+[ 14:27:00 20/6/14 ] SUCCESS: 	дата начала:    2014-07-22 00:00:00 +0400
+[ 14:27:00 20/6/14 ] SUCCESS: 	дата окончания: 2014-07-23 00:00:00 +0400
+[ 14:27:00 20/6/14 ] SUCCESS: 	снижение:       
+[ 14:27:00 20/6/14 ] SUCCESS: 	задаток:        10 000 000,00
+[ 14:27:00 20/6/14 ] SUCCESS: 	цена:           225 000 000,00
+[ 14:27:01 20/6/14 ] SUCCESS: Интервал
+[ 14:27:01 20/6/14 ] SUCCESS: 	дата начала:    2014-07-23 00:00:00 +0400
+[ 14:27:01 20/6/14 ] SUCCESS: 	дата окончания: 2014-07-24 00:00:00 +0400
+[ 14:27:01 20/6/14 ] SUCCESS: 	снижение:       
+[ 14:27:01 20/6/14 ] SUCCESS: 	задаток:        10 000 000,00
+[ 14:27:01 20/6/14 ] SUCCESS: 	цена:           200 000 000,00
+[ 14:27:02 20/6/14 ] SUCCESS: Интервал
+[ 14:27:02 20/6/14 ] SUCCESS: 	дата начала:    2014-07-24 00:00:00 +0400
+[ 14:27:02 20/6/14 ] SUCCESS: 	дата окончания: 2014-07-25 00:00:00 +0400
+[ 14:27:02 20/6/14 ] SUCCESS: 	снижение:       
+[ 14:27:02 20/6/14 ] SUCCESS: 	задаток:        10 000 000,00
+[ 14:27:02 20/6/14 ] SUCCESS: 	цена:           175 000 000,00
+[ 14:27:03 20/6/14 ] SUCCESS: Интервал
+[ 14:27:03 20/6/14 ] SUCCESS: 	дата начала:    2014-07-25 00:00:00 +0400
+[ 14:27:03 20/6/14 ] SUCCESS: 	дата окончания: 2014-07-28 00:00:00 +0400
+[ 14:27:03 20/6/14 ] SUCCESS: 	снижение:       
+[ 14:27:03 20/6/14 ] SUCCESS: 	задаток:        10 000 000,00
+[ 14:27:03 20/6/14 ] SUCCESS: 	цена:           150 000 000,00
+[ 14:27:05 20/6/14 ] SUCCESS: Интервал
+[ 14:27:05 20/6/14 ] SUCCESS: 	дата начала:    2014-07-28 00:00:00 +0400
+[ 14:27:05 20/6/14 ] SUCCESS: 	дата окончания: 2014-07-29 00:00:00 +0400
+[ 14:27:05 20/6/14 ] SUCCESS: 	снижение:       
+[ 14:27:05 20/6/14 ] SUCCESS: 	задаток:        10 000 000,00
+[ 14:27:05 20/6/14 ] SUCCESS: 	цена:           125 000 000,00
+[ 14:27:05 20/6/14 ] SUCCESS: Интервал
+[ 14:27:05 20/6/14 ] SUCCESS: 	дата начала:    2014-07-29 00:00:00 +0400
+[ 14:27:05 20/6/14 ] SUCCESS: 	дата окончания: 2014-09-01 23:59:00 +0400
+[ 14:27:05 20/6/14 ] SUCCESS: 	снижение:       
+[ 14:27:05 20/6/14 ] SUCCESS: 	задаток:        10 000 000,00
+[ 14:27:05 20/6/14 ] SUCCESS: 	цена:           100 000 000,00
+[ 14:27:06 20/6/14 ] DBG: process_fedresurs > look_over_table > each by tr - new window > close
+[ 14:27:06 20/6/14 ] DBG: process_fedresurs > look_over_table > each by tr - switch to previous window
+[ 14:27:06 20/6/14 ] DBG: process_fedresurs > find_next_page
+[ 14:27:06 20/6/14 ] INFO: [fedresurs] Обработка пагинации: всего одна страница, пагинации нету.
+[ 14:27:06 20/6/14 ] DBG: process_fedresurs > loop_by_regions > each
+[ 14:27:06 20/6/14 ] INFO: регион: 46 | Московская область
+[ 14:27:06 20/6/14 ] DBG: shared > wait_timeout, timeout: 3
+[ 14:27:09 20/6/14 ] DBG: process_fedresurs > vizit_fedresurs
+[ 14:27:11 20/6/14 ] DBG: process_fedresurs > fill_form
+[ 14:27:15 20/6/14 ] DBG: shared > wait_timeout, timeout: 3
+[ 14:27:21 20/6/14 ] DBG: shared > wait_when_dom_changed
+[ 14:27:21 20/6/14 ] DBG: process_fedresurs > process_paggination
+[ 14:27:22 20/6/14 ] DBG: process_fedresurs > check_page
+[ 14:27:22 20/6/14 ] SUCCESS: [fedresurs] Обнаружен список торгов
+[ 14:27:22 20/6/14 ] DBG: process_fedresurs > process_paggination > if
+[ 14:27:22 20/6/14 ] DBG: process_fedresurs > look_over_table
+[ 14:27:22 20/6/14 ] DBG: process_fedresurs > look_over_table > each by tr
+[ 14:27:22 20/6/14 ] DBG: process_fedresurs > look_over_table > each by tr - grab platform_id from link href
+[ 14:27:22 20/6/14 ] DBG: process_fedresurs > look_over_table > each by tr - gsub platform_id
+[ 14:27:22 20/6/14 ] DBG: process_fedresurs > look_over_table > each by tr - check if able?
+[ 14:27:22 20/6/14 ] DBG: platforms_list > able? No: 109
+[ 14:27:22 20/6/14 ] DBG: process_fedresurs > look_over_table > each by tr - check: is so far?
+[ 14:27:22 20/6/14 ] DBG: process_fedresurs > check_addres
+[ 14:27:22 20/6/14 ] DBG: process_fedresurs > check_addres > pull addr
+[ 14:27:22 20/6/14 ] DBG: process_fedresurs > have_card?
+[ 14:27:22 20/6/14 ] DBG: process_fedresurs > grab_addres_by_card
+[ 14:27:22 20/6/14 ] DBG: process_fedresurs > grab_addres_by_card > new wnd by click link
+[ 14:27:23 20/6/14 ] DBG: process_fedresurs > grab_addres_by_card > switch to new wnd
+[ 14:27:23 20/6/14 ] DBG: process_fedresurs > grab_addres_by_card > @@brw.windows.last.use do
+[ 14:27:28 20/6/14 ] DBG: shared > wait_when_dom_changed
+[ 14:27:28 20/6/14 ] DBG: process_fedresurs > grab_addres_by_card > @@brw.windows.last.use do > grab addr
+[ 14:27:28 20/6/14 ] DBG: process_fedresurs > grab_addres_by_card > @@brw.windows.last.use do - close
+[ 14:27:29 20/6/14 ] DBG: process_fedresurs > check_addres > return addr unless addr?
+[ 14:27:29 20/6/14 ] DBG: process_fedresurs > check_addres > Geo.near? Московская обл, Люберецкий р-н, Люберцы г, ВУГИ п, 1
+[ 14:27:29 20/6/14 ] DBG: geocoder > near?
+[ 14:27:29 20/6/14 ] DBG: 	arrd: Московская обл, Люберецкий р-н, Люберцы г, ВУГИ п, 1
+[ 14:27:30 20/6/14 ] DBG: process_fedresurs > look_over_table > each by tr - get params call
+[ 14:27:30 20/6/14 ] DBG: platforms_params > get_params_by_row
+[ 14:27:30 20/6/14 ] DBG: platforms_params > get_params_by_row (середина)
+	id: 109	strategy: type2
+[ 14:27:30 20/6/14 ] DBG: process_fedresurs > look_over_table > each by tr - params present
+[ 14:27:30 20/6/14 ] DBG: shared > wait_timeout, timeout: 3
+[ 14:27:33 20/6/14 ] DBG: process_fedresurs > look_over_table > each by tr - open new window for platform http://utender.ru/public/public-offers-all/
+[ 14:27:34 20/6/14 ] DBG: process_fedresurs > look_over_table > each by tr - switch to new window
+[ 14:27:34 20/6/14 ] DBG: process_fedresurs > look_over_table > each by tr - new window > Platfor.process! call
+[ 14:27:34 20/6/14 ] DBG: platforms > process! на входе
+	параметры площадки: {:url=>"http://utender.ru/public/public-offers-all/", :id=>109, :strategy=>:type2, :pp_num=>nil, :lot_num=>"1"}
+[ 14:27:34 20/6/14 ] SUCCESS: Обработка на площадке
+[ 14:27:34 20/6/14 ] DBG: type2 id: 109, pp_num: , lot_num: 1
+[ 14:27:44 20/6/14 ] DBG: shared > wait_when_dom_changed
+[ 14:27:44 20/6/14 ] DBG: shared > wait_timeout, timeout: 3
+[ 14:27:52 20/6/14 ] DBG: shared > wait_when_dom_changed
+[ 14:27:54 20/6/14 ] SUCCESS: Лот
+[ 14:27:54 20/6/14 ] SUCCESS: 	наименование: Нежилые помещения:№1 (комн. №№ 1-30); №3 (комн. №№ 1-5,5а,6,6а,6б,10,12,31-35 на 1-ом этаже); комн. №№1-14 на 2-ом этаже; комн. №№1-16 на 3-ем этаже; комн. №№1-18 на 4-ом этаже); подвал, местонахождение: Костромская область, Костромской район, Чернопенское с.п., пос. Сухоногово, пл. Советская, д.3.
+[ 14:27:54 20/6/14 ] SUCCESS: 	сведения:     В течение срока подачи заявок Претендентам предоставляется возможность ознакомления с подробным составом лотов выставляемых на торги, с документами на это имущество по адресу: 156519 Костромская область, Костромской район, пос. Никольское, ул. Мира 16, в рабочие дни с 10ч00мин до 15ч00мин, справки по тел.: +79600480791.
+[ 14:27:55 20/6/14 ] SUCCESS: 	url:          http://utender.ru/public/public-offers/lots/view/532586/
+[ 14:27:57 20/6/14 ] SUCCESS: Интервал
+[ 14:27:57 20/6/14 ] SUCCESS: 	дата начала:    2014-07-29 09:00:00 +0400
+[ 14:27:57 20/6/14 ] SUCCESS: 	дата окончания: 2014-08-04 17:00:00 +0400
+[ 14:27:57 20/6/14 ] SUCCESS: 	снижение:       
+[ 14:27:57 20/6/14 ] SUCCESS: 	задаток:        1 486 260,00
+[ 14:27:57 20/6/14 ] SUCCESS: 	цена:           7 431 300,00
+[ 14:27:58 20/6/14 ] SUCCESS: Интервал
+[ 14:27:58 20/6/14 ] SUCCESS: 	дата начала:    2014-08-05 09:00:00 +0400
+[ 14:27:58 20/6/14 ] SUCCESS: 	дата окончания: 2014-08-11 17:00:00 +0400
+[ 14:27:58 20/6/14 ] SUCCESS: 	снижение:       
+[ 14:27:58 20/6/14 ] SUCCESS: 	задаток:        1 337 634,00
+[ 14:27:58 20/6/14 ] SUCCESS: 	цена:           6 688 170,00
+[ 14:27:59 20/6/14 ] SUCCESS: Интервал
+[ 14:27:59 20/6/14 ] SUCCESS: 	дата начала:    2014-08-12 09:00:00 +0400
+[ 14:27:59 20/6/14 ] SUCCESS: 	дата окончания: 2014-08-18 17:00:00 +0400
+[ 14:27:59 20/6/14 ] SUCCESS: 	снижение:       
+[ 14:27:59 20/6/14 ] SUCCESS: 	задаток:        1 189 008,00
+[ 14:27:59 20/6/14 ] SUCCESS: 	цена:           5 945 040,00
+[ 14:27:59 20/6/14 ] SUCCESS: Интервал
+[ 14:27:59 20/6/14 ] SUCCESS: 	дата начала:    2014-08-19 09:00:00 +0400
+[ 14:27:59 20/6/14 ] SUCCESS: 	дата окончания: 2014-08-25 17:00:00 +0400
+[ 14:27:59 20/6/14 ] SUCCESS: 	снижение:       
+[ 14:27:59 20/6/14 ] SUCCESS: 	задаток:        1 040 382,00
+[ 14:27:59 20/6/14 ] SUCCESS: 	цена:           5 201 910,00
+[ 14:28:00 20/6/14 ] SUCCESS: Интервал
+[ 14:28:00 20/6/14 ] SUCCESS: 	дата начала:    2014-08-26 09:00:00 +0400
+[ 14:28:00 20/6/14 ] SUCCESS: 	дата окончания: 2014-09-01 17:00:00 +0400
+[ 14:28:00 20/6/14 ] SUCCESS: 	снижение:       
+[ 14:28:00 20/6/14 ] SUCCESS: 	задаток:        891 756,00
+[ 14:28:00 20/6/14 ] SUCCESS: 	цена:           4 458 780,00
+[ 14:28:01 20/6/14 ] SUCCESS: Интервал
+[ 14:28:01 20/6/14 ] SUCCESS: 	дата начала:    2014-09-02 09:00:00 +0400
+[ 14:28:01 20/6/14 ] SUCCESS: 	дата окончания: 2014-09-08 17:00:00 +0400
+[ 14:28:01 20/6/14 ] SUCCESS: 	снижение:       
+[ 14:28:01 20/6/14 ] SUCCESS: 	задаток:        743 130,00
+[ 14:28:01 20/6/14 ] SUCCESS: 	цена:           3 715 650,00
+[ 14:28:02 20/6/14 ] SUCCESS: Интервал
+[ 14:28:02 20/6/14 ] SUCCESS: 	дата начала:    2014-09-09 09:00:00 +0400
+[ 14:28:02 20/6/14 ] SUCCESS: 	дата окончания: 2014-09-15 17:00:00 +0400
+[ 14:28:02 20/6/14 ] SUCCESS: 	снижение:       
+[ 14:28:02 20/6/14 ] SUCCESS: 	задаток:        594 504,00
+[ 14:28:02 20/6/14 ] SUCCESS: 	цена:           2 972 520,00
+[ 14:28:03 20/6/14 ] SUCCESS: Интервал
+[ 14:28:03 20/6/14 ] SUCCESS: 	дата начала:    2014-09-16 09:00:00 +0400
+[ 14:28:03 20/6/14 ] SUCCESS: 	дата окончания: 2014-09-22 17:00:00 +0400
+[ 14:28:03 20/6/14 ] SUCCESS: 	снижение:       
+[ 14:28:03 20/6/14 ] SUCCESS: 	задаток:        445 878,00
+[ 14:28:03 20/6/14 ] SUCCESS: 	цена:           2 229 390,00
+[ 14:28:03 20/6/14 ] DBG: process_fedresurs > look_over_table > each by tr - new window > close
+[ 14:28:03 20/6/14 ] DBG: process_fedresurs > look_over_table > each by tr - switch to previous window
+[ 14:28:03 20/6/14 ] DBG: process_fedresurs > look_over_table > each by tr
+[ 14:28:03 20/6/14 ] DBG: process_fedresurs > look_over_table > each by tr - grab platform_id from link href
+[ 14:28:03 20/6/14 ] DBG: process_fedresurs > look_over_table > each by tr - gsub platform_id
+[ 14:28:03 20/6/14 ] DBG: process_fedresurs > look_over_table > each by tr - check if able?
+[ 14:28:03 20/6/14 ] DBG: platforms_list > able? No: 121
+[ 14:28:03 20/6/14 ] DBG: process_fedresurs > look_over_table > each by tr - check: is so far?
+[ 14:28:03 20/6/14 ] DBG: process_fedresurs > check_addres
+[ 14:28:03 20/6/14 ] DBG: process_fedresurs > check_addres > pull addr
+[ 14:28:03 20/6/14 ] DBG: process_fedresurs > have_card?
+[ 14:28:03 20/6/14 ] DBG: process_fedresurs > grab_addres_by_card
+[ 14:28:03 20/6/14 ] DBG: process_fedresurs > grab_addres_by_card > new wnd by click link
+[ 14:28:05 20/6/14 ] DBG: process_fedresurs > grab_addres_by_card > switch to new wnd
+[ 14:28:05 20/6/14 ] DBG: process_fedresurs > grab_addres_by_card > @@brw.windows.last.use do

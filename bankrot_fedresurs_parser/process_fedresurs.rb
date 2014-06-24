@@ -59,7 +59,7 @@ module BankrotFedresursParser
 					Log.dbg "process_fedresurs > fill_form"
 					# текущая дата
 					# Формат: 20.05.2014 (ну или 01.01.2014 - в начале нолик)
-					current_date = Time.now.strftime('%d.%m.%Y')
+					current_date = (Date.today - 1).to_time
 					# установка вида торгов
 					l =-> do
 						@@brw.select_list(name: 'ctl00$cphBody$ucTradeType$ddlBoundList').select_value( CFG.vid_torgov )

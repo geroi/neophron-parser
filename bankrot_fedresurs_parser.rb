@@ -41,6 +41,7 @@ require 'watir-dom-wait'
 require 'nokogiri'
 require 'date'
 require 'headless'
+require 'date'
 #require 'russian'  # => \  уже есть в geocoder.rb
 #require 'geocoder' # =>  \
 
